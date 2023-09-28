@@ -6,5 +6,5 @@
   Plan: add an AI version using the minimax algorithm with difficulty levels.
 
 ## Requirements  
-Python3
+Python3  
 PyGame - to install, type pip install pygame (or pip3 install pygame on Mac)
