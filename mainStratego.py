@@ -1,9 +1,9 @@
 import pygame
-from checkers.constants import WIDTH, HEIGHT, ROWS, COLS, SQUARE_SIZE
+from Stratego.constants import WIDTH, HEIGHT, ROWS, COLS, SQUARE_SIZE
 from checkers.board import Board
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('Checkers')
+pygame.display.set_caption('Stratego')
 background_image = pygame.image.load("stratego.png")  # Replace "background.jpg" with your image file path
 background_image = pygame.transform.scale(background_image, (WIDTH, HEIGHT))
 
