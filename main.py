@@ -1,23 +1,31 @@
 import pygame
+from checkers.constants import WIDTH, HEIGHT, ROWS, COLS, SQUARE_SIZE
+from checkers.board import Board
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-# Initialize Pygame
-pygame.init()
+pygame.display.set_caption('Checkers')
 
-# Screen dimensions
-screen_width = 800
-screen_height = 600
-screen = pygame.display.set_mode((screen_width, screen_height))
+FPS = 60
 
-# Main Game Loop
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+def main():
+    run = True
+    clock = pygame.time.Clock()
+    board = Board()
 
-    # Your game logic and drawing code here
+    while run:
+        clock.tick(FPS)
 
-    pygame.display.flip()  # Update the display
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
 
-pygame.quit()  # Quit Pygame when done
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                pass
+
+        board.draw_squares(WIN)
+        pygame.display.update()
+
+    pygame.quit()
+
+if __name__ == "__main__":
+    main()
