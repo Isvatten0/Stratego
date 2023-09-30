@@ -33,18 +33,18 @@ class Board:
         for row in range(ROWS):
             self.board.append([])
             for col in range(COLS):
-                if col % 2 == ((row +  1) % 2):
-                    if row < 3:
-                        self.board[row].append(Piece(row, col, WHITE))
-                    elif row > 4:
-                        self.board[row].append(Piece(row, col, RED))
-                    else:
-                        self.board[row].append(0)
+                # if col % 2 == ((row +  1) % 2):
+                if row < 4:
+                    self.board[row].append(Piece(row, col, "Red"))
+                elif row > 5:
+                    self.board[row].append(Piece(row, col, "Blue"))
                 else:
                     self.board[row].append(0)
+                # else:
+                #     self.board[row].append(0)
         
     def draw(self, win):
-        self.draw_squares(win)
+        # self.draw_squares(win)
         for row in range(ROWS):
             for col in range(COLS):
                 piece = self.board[row][col]

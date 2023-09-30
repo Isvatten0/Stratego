@@ -7,6 +7,8 @@ FPS = 60
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Checkers')
+background_image = pygame.image.load("stratego.png")  # Replace "background.jpg" with your image file path
+background_image = pygame.transform.scale(background_image, (WIDTH, HEIGHT))
 
 def get_row_col_from_mouse(pos):
     x, y = pos
@@ -20,6 +22,8 @@ def main():
     game = Game(WIN)
 
     while run:
+        # Blit the background image onto the screen
+        WIN.blit(background_image, (0, 0))
         clock.tick(FPS)
 
         if game.winner() != None:
